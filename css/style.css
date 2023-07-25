@@ -1,0 +1,176 @@
+body {
+    background-color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ========================================================================= */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 10px;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10000;
+    transition: 0.5s;
+    background-color: rgb(0, 0, 0);
+}
+
+.logo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.logo .logo-spider {
+    font-size: 24px;
+    color: #f00;
+}
+
+.navbar {
+    display: flex;
+    column-gap: 5rem;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: aliceblue;
+}
+
+.navbar a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #f00;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.4s all linear;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar .active::after {
+    width: 100%;
+}
+
+#menu-icon {
+    color: #fff;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100000;
+    display: none;
+}
+
+.btnSign {
+    padding: 0.7rem 1.4rem;
+    background-color: #f00;
+    color: #fff;
+    font-weight: 400;
+    border-radius: 0.5rem;
+}
+
+.btnSign:hover {
+    background-color: #fa1216;
+    color: #fff;
+}
+
+body {
+    height: 3223px;
+}
+
+nav.shadow {
+    background-color: #fff;
+    box-shadow: 0 0 4px rgb(14 55 54 / 15%);
+}
+
+nav.shadow .navbar a,
+nav.shadow #menu-icon {
+    color: #000;
+}
+
+/* scroll */
+html::-webkit-scrollbar {
+    width: .5rem;
+    background-color: #000;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: #f00;
+    border-radius: .2rem;
+}
+
+@media (max-width:991px) {
+    nav {
+        padding: 18px 4%;
+    }
+}
+
+@media (max-width:774px) {
+    nav {
+        padding: 12px 4%;
+    }
+
+    #menu-icon {
+        display: initial;
+        color: #f00;
+    }
+
+    .navbar {
+        position: absolute;
+        top: -570px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        row-gap: 1, 4rem;
+        padding: 20px;
+        box-shadow: 4px 4px 0 4px rgb(14 55 54 / 15%);
+        transition: 0.2s all linear;
+        text-align: center;
+    }
+
+    .navbar a {
+        color: #000;
+        width: 0;
+        /* height: 2px; */
+        transition: 1s all;
+    }
+    .navbar li {
+        margin: 20px 0;
+    }
+    .navbar.active {
+        top: 100%;
+    }
+    nav.shadow #menu-icon{
+        color: #000;
+    }
+}
+
+@media (max-width:370px) {
+    nav {
+        padding: 6px 4%;
+    }
+}
